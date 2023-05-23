@@ -2,6 +2,7 @@
 
 ## Description
 This project is a simple web application that displays random memes fetched from the Reddit API. It uses Flask, a Python web framework, to serve the application and render the meme content on a webpage.
+![image](https://github.com/ItsAbdiOk/Meme-Page/assets/91463101/4b9a0eae-000f-4e95-8938-67d46bcedd21)
 
 ## Installation
 
