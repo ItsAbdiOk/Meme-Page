@@ -52,4 +52,4 @@ def fetch_random_mountain_image():
         return "https://example.com/fallback_mountain_image.jpg"
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=80)
+    app.run(debug= False, host="0.0.0.0")
