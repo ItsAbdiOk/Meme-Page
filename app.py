@@ -8,14 +8,12 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    # Create a Reddit instance
     reddit = praw.Reddit(client_id=config.CLIENT_ID,
                          client_secret=config.CLIENT_SECRET,
                          user_agent=config.USER_AGENT)
-
     # Get a random hot post from r/memes
     subreddit = reddit.subreddit('memes')
-    hot_posts = subreddit.hot(limit=50)  # Adjust the limit as per your preference
+    hot_posts = subreddit.hot(limit=50)  
 
     # Select a random post from the hot posts
     random_post = random.choice(list(hot_posts))
@@ -33,9 +31,6 @@ def index():
 
 def determine_post_type(url):
     # Function to determine the post type based on the URL or other relevant information
-    # You can implement your own logic here based on the structure of the URL or any other data available
-    # Example: Check if the URL ends with an image extension or contains keywords indicating a video
-
     if url.endswith(('.jpg', '.jpeg', '.png', '.gif')):
         return 'image'
     elif url.endswith(('.mp4', '.avi', '.mov')):
