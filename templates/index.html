@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Meme</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            background: #222;
+            background-image: url('{{ background_url }}');
+            font-size: 50%;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 2em;
+            border-radius: 30px;
+            width: 100%;
+            max-width: 420px;
+            margin: 1em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: 'Libre Baskerville', serif;
+            text-transform: uppercase;
+            color: #fff;
+            margin-top: 0;
+        }
+        .media {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 0.4em;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if post_type == 'image' %}
+            <img src="{{ url }}" alt="Meme Image" class="media">
+        {% elif post_type == 'video' %}
+            <video src="{{ url }}" alt="Meme Video" class="media" controls autoplay loop muted></video>
+        {% endif %}
+        <h1>{{ title }}</h1>
+    </div>
+</body>
+</html>
